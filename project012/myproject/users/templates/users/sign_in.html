@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    users
+{% endblock %}
+
+
+{% block content %}
+    <h1><strong>Login here to access your account.</strong></h1><br>
+    <p><i>If you don't have an account,?</i><a href="/users/sign_up/">Sign up</a></p>
+    <p>or</p>
+    <h2><b>Sign_in in the form below.</b></h2>
+    <form class="form-with-validation" action={% url "users:login" %} method="post">
+        {% csrf_token %}
+        {{ form }}
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+        {% endif %}
+        <!-- <p><a href="/users/reset_password/">Forgot your password?</a></p> -->
+        <button class="form-submit">Sign_in</button>
+    </form>
+{% endblock %}

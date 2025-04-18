@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    users 
+{% endblock %}
+
+
+{% block content %}
+    <section>
+    <h1><strong>Register here to create a new account.</strong></h1><br>
+    <p><i>Already have an account?</i><a href="/users/sign_in/">Sign in</a></p>
+    <p>or</p>
+    <h2><b>Sign_up in the form below.</b></h2>
+    <form class="form-with-validation" action="/users/sign_up/" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button class="form-submit">Sign_up</button>
+    </form>
+    </section>
+{% endblock %}

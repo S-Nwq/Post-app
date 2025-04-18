@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    users
+{% endblock %}
+
+
+{% block content %}
+    <section>
+    <h1>sign_up</h1>
+    <form class="form-with-validation" action="/users/sign_up/" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button class="form-submit">Submit</button>
+    </form>
+    </section>
+{% endblock %}

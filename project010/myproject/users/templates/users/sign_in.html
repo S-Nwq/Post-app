@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    users
+{% endblock %}
+
+
+{% block content %}
+    <h1><strong>Login here to access your account.</strong></h1><br>
+    <p><i>If you don't have an account,?</i><a href="/users/sign_up/">Sign up</a></p>
+    <p><i>or</i></p>
+    <h2><b>Sign_in in the form below.</b></h2>
+    <form class="form-with-validation" action="/users/sign_in/" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <button class="form-submit">Sign_in</button>
+    </form>
+{% endblock %}
