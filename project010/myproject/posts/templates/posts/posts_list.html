@@ -16,6 +16,11 @@
                     {{ post.title }}
                 </a>
             </h2>
+            <img 
+            class='banner'
+            src="{{ post.banner.url }}" 
+            alt="{{ post.title }}"
+            />
             <p>{{ post.body }}</p>
             <p>{{ post.date }}</p>
         </article>
